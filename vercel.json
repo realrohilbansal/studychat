@@ -1,7 +1,7 @@
 {
     "builds": [
       {
-        "src": "studybud/wsgi.py",
+        "src": "studychat/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       },
@@ -20,11 +20,11 @@
       },
       {
         "src": "/(.*)",
-        "dest": "studybud/wsgi.py"
+        "dest": "studychat/wsgi.py"
       }
     ],
     "env": {
-      "DJANGO_SETTINGS_MODULE": "studybud.settings",
+      "DJANGO_SETTINGS_MODULE": "studychat.settings",
       "PYTHONPATH": "/var/task"
     }
 }
