@@ -29,8 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '.vercel.app').split(',')
-
+ALLOWED_HOSTS = ['*']  # This is less secure but will work for now
 
 # Application definition
 
@@ -169,3 +168,7 @@ if 'test' in sys.argv:
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': ':memory:',
     }
+
+if 'VERCEL' in os.environ:
+    ALLOWED_HOSTS.append('.vercel.app')
+    ALLOWED_HOSTS.append('.now.sh')

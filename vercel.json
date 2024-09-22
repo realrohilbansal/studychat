@@ -22,5 +22,8 @@
         "src": "/(.*)",
         "dest": "studybud/wsgi.py"
       }
-    ]
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "studybud.settings"
+    }
 }

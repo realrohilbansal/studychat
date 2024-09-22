@@ -1,9 +1,12 @@
 # build_files.sh
 #!/bin/bash
-echo "Python version:"
-python --version
-echo "Pip version:"
-pip --version
+echo "Building the project..."
+python -m pip install --upgrade pip
 pip install -r requirements.txt
-python manage.py migrate
-python manage.py collectstatic --noinput
+
+echo "Make migrations..."
+python manage.py makemigrations --noinput
+python manage.py migrate --noinput
+
+echo "Collect static..."
+python manage.py collectstatic --noinput --clear
