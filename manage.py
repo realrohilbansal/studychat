@@ -6,9 +6,6 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studychat.settings')
-    print("PYTHONPATH: {}".format(os.environ.get('PYTHONPATH')))
-    print("Current directory: {}".format(os.getcwd()))
-    print("Directory contents: {}".format(os.listdir('.')))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
