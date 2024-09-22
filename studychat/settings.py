@@ -141,6 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -167,3 +168,12 @@ if 'test' in sys.argv:
 
 if 'VERCEL' in os.environ:
     ALLOWED_HOSTS.extend(['.vercel.app', '.now.sh'])
+
+# Add these lines if they're not already present
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Update STATICFILES_DIRS if needed
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
