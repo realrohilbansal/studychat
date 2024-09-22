@@ -25,6 +25,6 @@
     ],
     "env": {
       "DJANGO_SETTINGS_MODULE": "studychat.settings",
-      "PYTHONPATH": "/var/task"
+      "PYTHONPATH": "/var/task:/var/task/studychat"
     }
 }
